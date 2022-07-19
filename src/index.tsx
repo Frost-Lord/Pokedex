@@ -6,11 +6,13 @@ import reportWebVitals from './reportWebVitals';
 
 ////////////////Pages/////////////////////////
 import App from './pages/Home/App';
+import Detailed from './pages/Detailed/Info';
 
 ReactDOM.render(
   <Router>
     <Routes>
       <Route path="/" element={<App />} />
+      <Route path="/:pokemon/detailed" element={<Detailed />} />
     </Routes>
   </Router>,
 
