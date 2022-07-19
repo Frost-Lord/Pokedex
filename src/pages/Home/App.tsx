@@ -1,23 +1,52 @@
-import React from 'react';
-import logo from '../logo.svg';
-import '../App.css';
+import './App.scss'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { PList } from '../../api/routes';
 
 function App() {
+
+  const [PokemonList, setPokemon] = useState([]);
+
+  async function getPokemon() {
+    const response = await axios.get(PList);
+    
+    let lineNumber = 1;
+    const mappedData: any = response.data.results?.map((pokemon: {name: string}) => {
+
+      const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${lineNumber++}.png`
+
+      return (
+        <div className="pokemon">
+          <a className='pokemonname'>{pokemon.name}</a>
+          <img src={url}></img>
+          <br></br><br></br>
+          <button className='deletebutton'>Delete</button>
+          <button className='infobutton'>Edit</button>
+        </div>
+      )
+    });
+    setPokemon(mappedData);
+  }
+
+  useEffect(() => {
+    getPokemon()
+  }, []);
+  
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+        <a className="pokedextopbar">
+          <h1>Pokedex</h1>
         </a>
+        <br></br><br></br>
+        <h1>List of the top 50 pokemon</h1>
+        <br></br>
+        <div className="card-columns">
+        <div className="pokemonlist">
+        {PokemonList}
+        </div>
+        </div>
       </header>
     </div>
   );
