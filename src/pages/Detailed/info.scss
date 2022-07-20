@@ -73,3 +73,54 @@
   .sidenav h1 {
     font-size: 0.7cm;
   }
+
+  .pokedextopbar img {
+    width: 50%;
+    transition: 0.9s;
+    flex: auto;
+    height: 50%;
+    border-radius: 1.5rem;
+  }
+  .controllButton {
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+    transition: 0.9s;
+    z-index: 1;
+  }
+
+  .pokedextopbar {
+    background-color: #ffcb05;
+    transition: 0.9s;
+    color: rgb(212 212 216/var(--tw-text-opacity))!important;
+    width: 30cm;
+    height: 70%;
+    top: 0cm;
+    right: 7cm;
+    text-align: left;
+    font-size: 0.6cm;
+    border-radius: 1.5rem;
+    z-index: 2;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+    flex: auto;
+  }
+
+    @media (max-width: 1578px) {
+        .pokedextopbar {
+            width: 20cm;
+        }
+        .pokedextopbar img {
+            width: 70%;
+        }
+    }
+    @media (max-width: 1264px) {
+        .pokedextopbar {
+            width: 10cm;
+        }
+        .pokedextopbar img {
+            width: 50%;
+        }
+    }
