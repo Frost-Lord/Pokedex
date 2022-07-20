@@ -17,7 +17,7 @@ import {
 } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
+/* eslint-disable jsx-a11y/anchor-is-valid */
 function App() {
   const toastOptions: any = {
     position: "top-right",
@@ -81,32 +81,32 @@ function App() {
           <br></br>
           <br></br>
           <h1>Common Info:</h1>
-          <a>
+          <div>
             <FaBattleNet /> ID: #{pokemondocs.id}
-          </a>
-          <a>
+          </div>
+          <div>
             <FaTextHeight /> Height: {pokemondocs?.height}
-          </a>
-          <a>
+          </div>
+          <div>
             <FaWeight /> Weight: {pokemondocs?.weight}
-          </a>
-          <a>
+          </div>
+          <div>
             <FaStreetView /> Base Experience: {pokemondocs?.base_experience}
-          </a>
+          </div>
           <h1>Options:</h1>
-          <a>
+          <div>
             <FaEdit /> Edit Page: <button className="controllButton" onClick={(e) => {
                 e.preventDefault();
                 editpage();
               }}>Edit</button>
-          </a>
-          <a>
+          </div>
+          <div>
             <FaSave /> Save Page: <button className="controllButton" onClick={(e) => {
                 e.preventDefault();
                 savepage();
               }
               }>Save</button>
-          </a>
+          </div>
         </div>
 
         <div className="pokemoninfo" id="textedit">
