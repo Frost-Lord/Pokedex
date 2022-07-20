@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #120c21;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -63,13 +63,14 @@
   font-weight: bold;
 }
 .pokemon {
-  background-color: #02ac60;
+  background-color: #0b0a15;
   margin-bottom: 20px;
   padding: 20px;
   color: #f5f5f5;
   border-radius: 10px;
-  border-left: 5px solid #ffffff;
-  border-right: 5px solid #ffffff;
+  border-left: 5px solid #0b0a15;
+  border-right: 5px solid #0b0a15;
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
 }
 .pokemon:hover {
   transform: scale(1.1);
