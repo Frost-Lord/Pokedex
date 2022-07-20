@@ -36,11 +36,13 @@ function App() {
       const mappedData: any = response.data.results?.map(
         (pokemon: { name: string }) => {
           const url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${lineNumber++}.png`;
-  
+          let redirect = `${pokemon.name}/detailed`;
           return (
             <div className="pokemon">
-              <a className="pokemonname">{pokemon.name}</a>
+              <a className="pokemonname" href={redirect} >{pokemon.name}</a>
+              <a href={redirect}>
               <img src={url} alt="pokemon"></img>
+              </a>
               <br></br>
               <br></br>
               <button className="deletebutton" onClick={(e) => {

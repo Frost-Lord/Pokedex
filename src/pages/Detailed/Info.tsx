@@ -63,13 +63,33 @@ function App() {
     const pokemoninfo: any = document.getElementsByClassName("pokemoninfo");
     pokemoninfo[0].style.width = "60%";
     for (let i = 0; i < pokemoninfo.length; i++) {
-      pokemoninfo[i].style.backgroundColor = "#0b0a15";
+      pokemoninfo[i].style.backgroundColor = "#000000";
     }
   }
 
+  const URL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemondocs.id}.png`
   return (
     <div className="App">
       <header className="App-header">
+
+
+         <nav className="navbar">
+          <div className="navbar-brand">
+              <img src="https://i.ibb.co/NV53XXR/image-8.png" style={{width: 340}} alt="logo" />
+          </div>
+          <div className="navbar-menu">
+              <a className="navbar-item" href="#">
+                info
+              </a>
+              <a className="navbar-item" href="#">
+                About
+              </a>
+              <a className="navbar-item" href="/">
+                Home
+              </a>
+            </div>
+         </nav>
+         <br></br><br></br>
 
         <a className="pokedextopbar">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="pokemon" />
@@ -77,9 +97,14 @@ function App() {
         </a>
 
 
+        <div className="sidenavimg">
+          <h1>Picture:</h1>
+          <img src={URL} alt="pokemon" />
+        </div>
+
+        <br></br>
+
         <div className="sidenav">
-          <br></br>
-          <br></br>
           <h1>Common Info:</h1>
           <div>
             <FaBattleNet /> ID: #{pokemondocs.id}
@@ -149,7 +174,6 @@ function App() {
               })}
             </a>
           </a>
-          <br></br>
           <br></br>
           <a className="pokemoninfo">
           <FaGitkraken /> Species:{" "}

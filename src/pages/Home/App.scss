@@ -61,13 +61,14 @@
 .pokemonname {
   font-size: 2rem;
   font-weight: bold;
+  color: #ffffff;
 }
 .pokemon {
-  background-color: #0b0a15;
+  background-color: #000000;
   margin-bottom: 20px;
   padding: 20px;
   color: #f5f5f5;
-  border-radius: 10px;
+  border-radius: 1.5rem;
   border-left: 5px solid #0b0a15;
   border-right: 5px solid #0b0a15;
   box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
@@ -103,6 +104,6 @@
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #dfdfdf;
+  background-color: #120c21;
   border-radius: 10px;
 }
