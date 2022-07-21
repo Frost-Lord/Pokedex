@@ -47,12 +47,14 @@ function Index() {
           return (
             <li>
               <div className="card" id={pokemon.name}>
+              <a href={redirect}>
                 <div className="card-image">
                   <img src={url} alt="pokemonimg"></img>
                 </div>
                 <div className="card-theme">
                   <a href={redirect}>{pokemon.name}</a>
                 </div>
+              </a>
                 <button
                   className="deletebutton"
                   onClick={(e) => {
