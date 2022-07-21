@@ -101,7 +101,6 @@ function Index() {
           <img src="https://i.ibb.co/zN2sB0t/pokeball-icons-noun-project-168545-removebg-preview.png" alt="pokemon" />
         </a>
         <h1>List of the top 50 pokemon</h1>
-        <br></br>
         <ul className="card-container">
 
           {PokemonList}

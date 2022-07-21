@@ -1,4 +1,4 @@
-import {createRoot} from 'react-dom/client';
+import ReactDOMClient from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -7,8 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import App from './pages/Home/App';
 import Detailed from './pages/Detailed/Info';
 
-const rootElement: any = document.getElementById('root');
-const root = createRoot(rootElement);
+const root = ReactDOMClient.createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
   <Router>

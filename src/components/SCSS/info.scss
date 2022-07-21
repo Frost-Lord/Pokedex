@@ -20,6 +20,12 @@
     box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
 }
 
+.LineBreak {
+    display: block;
+    margin-top: 0.5cm;
+    margin-bottom: 0.5cm;
+}
+
 .infotext {
     font-size: 15px;
 }
@@ -38,7 +44,7 @@
     overflow-x: hidden;
     padding-top: 20px;
     border-radius: 1.5rem;
-    border: 3px solid #fff;
+    border: 3px solid;
     border-right-color: #ffcb05;
     border-top: #000000;
     border-bottom: #000000;
@@ -62,7 +68,7 @@
     overflow-x: hidden;
     padding-top: 20px;
     border-radius: 1.5rem;
-    border: 3px solid #fff;
+    border: 3px solid;
     border-right-color: #ffcb05;
     border-top: #000000;
     border-bottom: #000000;
@@ -195,10 +201,10 @@
 @media screen and (max-width: 1638px) {
     .sidenav  {
     width: 0;
-    border-right-color: #120c21;
+    display: none;
     }
     .sidenavimg {
     width: 0;
-    border-right-color: #120c21;
+    display: none;
     }
 }
