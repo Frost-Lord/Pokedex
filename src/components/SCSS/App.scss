@@ -1,0 +1,94 @@
+.App-header {
+  background-color: #120c21;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.card-container {
+  width: 90%;
+  height: auto;
+  margin: auto 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  padding: 10px;
+  
+}
+.card-container ul {
+  text-align: center;
+  margin: auto 0;
+}
+
+.card-container li {
+  list-style-type: none;
+  padding: .5em .5em .5em .5em;
+  text-align: left;
+}
+
+.card {
+  transition: 0.2s;
+  background-color: #000000;
+  overflow: hidden;
+  width: 7em;
+  word-wrap: break-word;
+  border-radius: 10px;
+}
+
+.card-image {
+  box-shadow: 1 1 #000;
+  transition: .3s;
+  background-color: #000000;
+  margin: auto 0;
+  text-align: center;
+}
+
+.card-theme {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+
+
+.deletebutton {
+ background-color: #ff0000;
+ border-radius: 5px;
+ padding: 10px;
+ text-align: center;
+ display: inline-block;
+ font-size: 16px;
+}
+.infobutton {
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #120c21;
+  border-radius: 10px;
+}

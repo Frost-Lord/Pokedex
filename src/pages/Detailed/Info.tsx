@@ -1,4 +1,4 @@
-import "./info.scss";
+import "../../components/SCSS/info.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import {
@@ -19,6 +19,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function App() {
+
   const toastOptions: any = {
     position: "top-right",
     autoClose: 8000,
@@ -35,6 +36,7 @@ function App() {
     );
     setPokemonDocs(response.data);
   }
+  console.log(pokemondocs);
 
   useEffect(() => {
     const url = window.location.pathname;
@@ -44,26 +46,32 @@ function App() {
   }, []);
 
   function editpage() {
-    const textedit: any = document.getElementById("textedit");
-    textedit.contentEditable = "true";
-    toast.warn("Editing activated!", toastOptions);
+    const textedit = document.getElementById("textedit");
+    if (textedit) {
+      textedit.contentEditable = "true";
+      toast.warn("Editing activated!", toastOptions);
 
-    const pokemoninfo: any = document.getElementsByClassName("pokemoninfo");
-    pokemoninfo[0].style.width = "75%";
-    for (let i = 0; i < pokemoninfo.length; i++) {
-      pokemoninfo[i].style.backgroundColor = "#121212";
+      const pokemoninfo: any = document.getElementsByClassName("pokemoninfo");
+      pokemoninfo[0].style.width = "75%";
+      for (let i = 0; i < pokemoninfo.length; i++) {
+        pokemoninfo[i].style.backgroundColor = "#121212";
+      }
     }
-
   }
   function savepage() {
-    const textedit: any = document.getElementById("textedit");
-    textedit.contentEditable = "false";
-    toast.success("Page saved!", toastOptions);
+    const textedit = document.getElementById("textedit");
+    if (textedit) {
+      textedit.contentEditable = "false";
+      toast.success("Page saved!", toastOptions);
 
-    const pokemoninfo: any = document.getElementsByClassName("pokemoninfo");
-    pokemoninfo[0].style.width = "60%";
-    for (let i = 0; i < pokemoninfo.length; i++) {
-      pokemoninfo[i].style.backgroundColor = "#000000";
+
+      const pokemoninfo: any = document.getElementsByClassName("pokemoninfo");
+      if (pokemoninfo) {
+        pokemoninfo[0].style.width = "60%";
+        for (let i = 0; i < pokemoninfo.length; i++) {
+          pokemoninfo[i].style.backgroundColor = "#000000";
+        }
+      }
     }
   }
 
@@ -73,23 +81,23 @@ function App() {
       <header className="App-header">
 
 
-         <nav className="navbar">
+        <nav className="navbar">
           <div className="navbar-brand">
-              <img src="https://i.ibb.co/NV53XXR/image-8.png" style={{width: 340}} alt="logo" />
+            <img src="https://i.ibb.co/NV53XXR/image-8.png" style={{ width: 340 }} alt="logo" />
           </div>
           <div className="navbar-menu">
-              <a className="navbar-item" href="#">
-                info
-              </a>
-              <a className="navbar-item" href="#">
-                About
-              </a>
-              <a className="navbar-item" href="/">
-                Home
-              </a>
-            </div>
-         </nav>
-         <br></br><br></br>
+            <a className="navbar-item" href="#">
+              info
+            </a>
+            <a className="navbar-item" href="#">
+              About
+            </a>
+            <a className="navbar-item" href="/">
+              Home
+            </a>
+          </div>
+        </nav>
+
 
         <a className="pokedextopbar">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="pokemon" />
@@ -121,16 +129,16 @@ function App() {
           <h1>Options:</h1>
           <div>
             <FaEdit /> Edit Page: <button className="controllButton" onClick={(e) => {
-                e.preventDefault();
-                editpage();
-              }}>Edit</button>
+              e.preventDefault();
+              editpage();
+            }}>Edit</button>
           </div>
           <div>
             <FaSave /> Save Page: <button className="controllButton" onClick={(e) => {
-                e.preventDefault();
-                savepage();
-              }
-              }>Save</button>
+              e.preventDefault();
+              savepage();
+            }
+            }>Save</button>
           </div>
         </div>
 
@@ -138,7 +146,7 @@ function App() {
           <div className="nametitle">{pokename}</div>
           <br></br>
           <a className="pokemoninfo">
-          <FaAudible /> Abilities:{" "}
+            <FaAudible /> Abilities:{" "}
             <a className="infotext" >
               <br></br>
               {pokemondocs?.abilities?.map(
@@ -150,7 +158,7 @@ function App() {
           <br></br>
           <br></br>
           <a className="pokemoninfo">
-          <FaGitlab /> Types:{" "}
+            <FaGitlab /> Types:{" "}
             <a className="infotext" >
               <br></br>
               {pokemondocs?.types?.map(
@@ -161,7 +169,7 @@ function App() {
           <br></br>
           <br></br>
           <a className="pokemoninfo">
-          <FaDeezer /> Stats:{" "}
+            <FaDeezer /> Stats:{" "}
             <a className="infotext" >
               <br></br>
               {pokemondocs?.stats?.map((stat: { base_stat: number; stat: { name: String } }) => {
@@ -176,34 +184,35 @@ function App() {
           </a>
           <br></br>
           <a className="pokemoninfo">
-          <FaGitkraken /> Species:{" "}
-          <a className="infotext" >
-            <br></br>
-            {pokemondocs?.species?.name}
-          </a>
-        </a>
-        <br></br>
-        <br></br>
-
-          <a className="pokemoninfo">
-          <FaEthernet /> Game Index:{" "}
+            <FaGitkraken /> Species:{" "}
             <a className="infotext" >
               <br></br>
-               {pokemondocs?.game_indices?.map((game: { version: any; game_index: String }) => {
+              {pokemondocs?.species?.name}
+            </a>
+          </a>
+          <br></br>
+          <br></br>
+
+          <a className="pokemoninfo">
+            <FaEthernet /> Game Index:{" "}
+            <a className="infotext" >
+              <br></br>
+
+              {pokemondocs?.game_indices?.map((game: { version: { name: String }; game_index: String }) => {
                 return (
                   <div>
                     <a>{game.version.name}: </a>
                     <a>{game.game_index}</a>
                   </div>
                 );
-               }
-                )}
+              }
+              )}
             </a>
           </a>
           <br></br>
           <br></br>
-        <a className="pokemoninfo">
-        <FaProjectDiagram /> Moves:{" "}
+          <a className="pokemoninfo">
+            <FaProjectDiagram /> Moves:{" "}
             <a className="infotext" >
               <br></br>
 
@@ -211,10 +220,10 @@ function App() {
                 return (
                   <div>
                     <a>{move.move.name} = </a>
-                    <button className="controllButton"  onClick={(e) => {
-                e.preventDefault();
-                window.location.href = `${move.move.url}`;
-              }}> <a>Link</a></button>
+                    <button className="controllButton" onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = `${move.move.url}`;
+                    }}> <a>Link</a></button>
                   </div>
                 );
               })}
@@ -222,8 +231,8 @@ function App() {
           </a>
           <br></br>
           <br></br>
-          </div>
-          <ToastContainer />
+        </div>
+        <ToastContainer />
       </header>
     </div>
   );

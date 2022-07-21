@@ -20,18 +20,6 @@
     box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: 1578px) {
-    .pokemoninfo {
-        width: 20cm;
-    }
-}
-@media (max-width: 1264px) {
-    .pokemoninfo {
-        width: 10cm;
-    }
-}
-
-
 .infotext {
     font-size: 15px;
 }
@@ -42,7 +30,7 @@
 
 .sidenavimg {
     height: 200px;
-    width: 230px;
+    width: 200px;
     flex: auto;
     transition: 0.5s;
     z-index: 1;
@@ -66,7 +54,7 @@
 
 .sidenav {
     height: 430px;
-    width: 230px;
+    width: 200px;
     flex: auto;
     transition: 0.5s;
     z-index: 1;
@@ -86,17 +74,6 @@
     left: 1cm;
     bottom: 3cm;
   } 
-
-    @media screen and (max-width: 600px) {
-        .sidenav  {
-        width: 0;
-        border-right-color: #120c21;
-        }
-        .sidenavimg {
-        width: 0;
-        border-right-color: #120c21;
-        }
-    }
   
   .sidenav div {
     padding: 6px 8px 6px 16px;
@@ -143,24 +120,12 @@
     z-index: 2;
     box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
     flex: auto;
-  }
+    margin-left: 0.2cm;
+    margin-top: 1.8cm;
+    bottom: 3cm;
+    left: 1cm;
 
-    @media (max-width: 1578px) {
-        .pokedextopbar {
-            width: 20cm;
-        }
-        .pokedextopbar img {
-            width: 70%;
-        }
-    }
-    @media (max-width: 1264px) {
-        .pokedextopbar {
-            width: 10cm;
-        }
-        .pokedextopbar img {
-            width: 50%;
-        }
-    }
+  }
 
 .navbar {
     background-color: #000000;
@@ -187,4 +152,53 @@
 }
 .navbar-brand {
     float: left;
+}
+
+@media screen and (max-width: 1151px) {
+    .pokemoninfo {
+        width: 100%;
+        height: 100%;
+        top: 0cm;
+        right: 0cm;
+        text-align: left;
+        font-size: 0.6cm;
+        border-radius: 1.5rem;
+        margin-left: 0.2cm;
+        z-index: 1;
+        box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+    }
+    .pokedextopbar {
+        width: 100%;
+        height: 100%;
+        top: 0cm;
+        right: 0cm;
+        text-align: left;
+        font-size: 0.6cm;
+        border-radius: 1.5rem;
+        margin-left: 0.2cm;
+        z-index: 1;
+        box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+    }
+    .navbar {
+        width: 100%;
+        height: 100%;
+        top: 0cm;
+        right: 0cm;
+        text-align: left;
+        font-size: 0.6cm;
+        border-radius: 1.5rem;
+        margin-left: 0.2cm;
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 1638px) {
+    .sidenav  {
+    width: 0;
+    border-right-color: #120c21;
+    }
+    .sidenavimg {
+    width: 0;
+    border-right-color: #120c21;
+    }
 }
